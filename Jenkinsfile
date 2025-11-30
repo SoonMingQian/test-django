@@ -3,23 +3,31 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                sh 'echo "checkout the app"'
+                git 'https://github.com/SoonMingQian/test-django'
             }
         }
         stage('Build') {
             steps {
-                sh 'echo "building the app"'
+                bat 'echo "building the app"'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Running tests"'
+                bat 'echo "Running tests"'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying"'
+                bat 'echo "Deploying"'
             }
+        }
+    }
+    post {
+        success {
+            bat 'echo "build successful"'
+        }
+        failure {
+            bat 'echo "build failure"'
         }
     }
 }
