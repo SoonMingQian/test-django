@@ -3,31 +3,31 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                bat 'echo "checkout code"'
+                sh 'echo "checkout code"'
             }
         }
         stage('Build') {
             steps {
-                bat 'echo "building the app"'
+                sh 'echo "building the app"'
             }
         }
         stage('Test') {
             steps {
-                bat 'echo "Running tests"'
+                sh 'echo "Running tests"'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'echo "Deploying"'
+                sh 'echo "Deploying"'
             }
         }
     }
     post {
         success {
-            bat 'echo "build successful"'
+            sh 'echo "build successful"'
         }
         failure {
-            bat 'echo "build failure"'
+            sh 'echo "build failure"'
         }
     }
 }
