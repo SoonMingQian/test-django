@@ -1,21 +1,26 @@
-pipeline {
+pipieline{
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building the app'
+    stages{
+        stage('Checkout Code'){
+            steps{
+                git 'https://github.com/SoonMingQian/test-django'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing the app'
+        stage('Build'){
+            steps{
+                sh 'echo "building the app"'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the app'
+        stage('Test'){
+            steps{
+                sh 'echo "Running tests"'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh 'echo "Deploying"'
             }
         }
     }
 }
+    
