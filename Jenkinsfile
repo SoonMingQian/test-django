@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/SoonMingQian/test-django'
+                git branch: 'main', url: 'https://github.com/SoonMingQian/test-django'
             }
         }
         stage('Build') {
